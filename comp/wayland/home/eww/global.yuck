@@ -1,0 +1,22 @@
+(defwidget Box [hline ?class]
+  (box
+  :space-evenly false
+  :spacing 5
+  :orientation "horizontal"
+  :halign "${hline}"
+  :class "${class}"
+  (children)))
+
+(defwidget withIcon [?classB ?classI ?classL icon label hline]
+  (box
+    :space-evenly false
+    :spacing 2
+    :class "${classB}"
+    :orientation "horizontal"
+    :halign "${hline}"
+    (label
+      :class "${classI}"
+      :text "${icon}")
+    (label
+      :class "${classL}"
+      :text "${label}")))

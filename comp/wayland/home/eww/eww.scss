@@ -1,0 +1,82 @@
+* {
+	all: unset;
+}
+
+$globalBack: rgba(0, 0, 0, 0.56);
+$icon: #e8b923;
+
+@mixin globalBox ($p: 10px) {
+	background: $globalBack;
+	border-radius: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.34);
+	padding: 0px $p 0px $p;
+}
+
+.right {
+	.date {
+		@include globalBox;
+		.dIcon {
+			color: $icon;
+			font-weight: bold;
+		}
+		.dLabel {
+			color: white;
+		}
+	}
+
+	.time {
+		@include globalBox;
+		.tIcon {
+			color: $icon;
+			font-weight: bold;
+		}
+		.tLabel {
+			color: white;
+		}
+	}
+
+	.volume {
+		@include globalBox;
+		.vIcon {
+			color: $icon;
+			font-weight: bold;
+		}
+	}
+}
+
+.mpdBox {
+	@include globalBox;
+
+	.mpdPlay {
+		color: white;
+		padding: 0px 7px 0px 0px;
+	}
+
+	.mpdName {
+		color: #e8b923;
+		font-weight: 500;
+	}
+
+	.mpdTime {
+		padding: 0px 0px 0px 7px;
+		font-weight: bold;
+	}
+}
+
+@mixin workS ($color) {
+	@include globalBox(20);
+	background: $color;
+	margin: 0px 4px 0px 4px;
+	&:hover {
+		background: rgba(255, 255, 255, 0.3);
+		color: black;
+	}
+}
+
+.workspace {
+	@include workS(rgba(0, 0, 0, 0.74));
+}
+
+.workspaceActive {
+	@include workS(rgba(235, 140, 4, 0.37));
+}

@@ -1,0 +1,26 @@
+(include "./global.yuck")
+
+(defwidget left []
+  (Box :hline "start"
+    (workspace)))
+
+(defwidget workspace []
+  (box
+    :orientation "horizontal"
+    :halign "start"
+    :space-evenly false
+    (for i in "${workie}"
+    (button
+      :class "${i.status == 1 ? "workspace" : "workspaceActive"}"
+      :onclick "hyprctl dispatch workspace ${i.id}"
+      (label
+        :text "${i.id == "-1337" ? "" : i.id}")
+      ))))
+
+
+(deflisten workie :initial "whatever"
+  `./hyprhelper workspaces`)
+
+
+
+

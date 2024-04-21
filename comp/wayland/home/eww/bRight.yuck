@@ -1,0 +1,44 @@
+(include "./global.yuck")
+(defwidget right []
+  (Box 
+    :hline "end"
+    :class "right"
+    (volume)
+    (date)
+    (time)))
+
+
+(defwidget volume []
+  (withIcon
+    :classB "volume"
+    :hline "end"
+    :classI "vIcon"
+    :icon ""
+    :classL "vLabel" 
+    :label "${volume["percentage"]}%"))
+
+(defwidget date []
+  (withIcon
+    :classB "date"
+    :hline "end"
+    :classI "dIcon"
+    :icon ""
+    :classL "dLabel"
+    :label "${time.date}"))
+
+(defwidget time []
+  (withIcon
+    :classB "time"
+    :hline "end"
+    :classI "tIcon"
+    :icon ""
+    :classL "tLabel"
+    :label "${time.time}"))
+
+
+(defpoll volume :interval "1s"
+  `./pw-volume status`)
+
+(defpoll time :interval "1s"
+  `./dateTime`)
+

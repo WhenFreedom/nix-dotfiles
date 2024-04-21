@@ -1,0 +1,16 @@
+(defwindow example
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "30px"
+                      :anchor "top center")
+  :stacking "fg"
+  :exclusive true
+  (taskbar1))
+
+(defwidget taskbar1 []
+  (box
+    (left)
+    (center)
+    (right)))

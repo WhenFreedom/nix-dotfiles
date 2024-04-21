@@ -1,0 +1,25 @@
+(defwidget center []
+  (Box :hline "center"
+    (mpd)))
+
+(defwidget mpd []
+  (eventbox
+    :onscroll "./mpd {}"
+    :onclick "./mpd toggle"
+    (box
+      :space-evenly false
+      :class "mpdBox"
+      :orientation "horizontal"
+      :halign "center"
+      (label
+        :class "mpdPlay"
+        :text "${song[0].state == "Play" ? "" : ""}")
+      (label
+        :class "mpdName"
+        :text "${song[0].artist} - ${song[0].title}")
+      (label
+        :class "mpdTime"
+        :text "${song[1].minutes}:${song[1].seconds}"))))
+
+(defpoll song :interval "1s"
+  `./mpd song`)
