@@ -1,9 +1,9 @@
 {pkgs, ...}:
 
 {
-		programs.emacs = {
-				enable = true;
+    programs.emacs = {
+        enable = true;
 
-				extraConfig = "${builtins.readFile ./init.el}";
-			};
-	}
+        extraConfig = "${builtins.readFile ./init.el}";
+      };
+  }

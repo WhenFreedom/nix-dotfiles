@@ -1,8 +1,8 @@
 {pkgs, lib, ...}:
 {
-	imports = [
-		./home
-		../shared/home
-		../comp/wayland/home
-	];
-	}
+  imports = [
+    ./home
+    ../shared/home
+    ../comp/wayland/home
+  ];
+  }

@@ -1,7 +1,7 @@
 {pkgs, lib, ...}:
 {
-		imports = [
-			./xdg.nix
-			./systemPackages.nix
-		];
-	}
+    imports = [
+      ./xdg.nix
+      ./systemPackages.nix
+    ];
+  }

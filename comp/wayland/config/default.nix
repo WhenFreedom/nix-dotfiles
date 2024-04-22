@@ -1,22 +1,22 @@
 {pkgs, ...}:
 {
-		imports = [
-		./programs.nix
-		./systemPackages.nix
-		];
+    imports = [
+    ./programs.nix
+    ./systemPackages.nix
+    ];
 
-		boot.initrd.kernelModules = [ "amdgpu" ];
-		services.xserver.videoDrivers = [ "amdgpu" ];
+    boot.initrd.kernelModules = [ "amdgpu" ];
+    services.xserver.videoDrivers = [ "amdgpu" ];
 
-		hardware.opengl = {
-				enable = true;
+    hardware.opengl = {
+        enable = true;
 
-				driSupport = true;
-				driSupport32Bit = true;
+        driSupport = true;
+        driSupport32Bit = true;
 
-				extraPackages = with pkgs; [
-						vaapiVdpau
-						libvdpau-va-gl
-					];
-			};
-	}
+        extraPackages = with pkgs; [
+            vaapiVdpau
+            libvdpau-va-gl
+          ];
+      };
+  }

@@ -13,37 +13,37 @@ dbus-sway-environment = pkgs.writeTextFile {
     '';
   };
 
-	configure-gtk = pkgs.writeTextFile {
-				name = "configure-gtk";
-				destination = "/bin/configure-gtk";
-				executable = true;
-				text = let 
-					schema = pkgs.gsettings-desktop-schemas;
-					datadir = "${schema}/share/gsettings-schemas/${schema.name}";
-					in ''
-					gnome_schema=org.gnome.desktop.interface
-					gsettings set $gnome_schema gtk-theme 'Dracula'
-					'';
-			};
+  configure-gtk = pkgs.writeTextFile {
+        name = "configure-gtk";
+        destination = "/bin/configure-gtk";
+        executable = true;
+        text = let 
+          schema = pkgs.gsettings-desktop-schemas;
+          datadir = "${schema}/share/gsettings-schemas/${schema.name}";
+          in ''
+          gnome_schema=org.gnome.desktop.interface
+          gsettings set $gnome_schema gtk-theme 'Dracula'
+          '';
+      };
 in
 {
-		environment.systemPackages = with pkgs; [
-			glib
-			dracula-theme
-			dbus
-			configure-gtk
-			gnome3.adwaita-icon-theme
-			dbus-sway-environment
-			ungoogled-chromium
-			xdg-utils
-			wdisplays
-			wlroots_0_16
-			#inputs.swayfx.packages.${system}.swayfx-unwrapped
-		];
+    environment.systemPackages = with pkgs; [
+      glib
+      dracula-theme
+      dbus
+      configure-gtk
+      gnome3.adwaita-icon-theme
+      dbus-sway-environment
+      ungoogled-chromium
+      xdg-utils
+      wdisplays
+      wlroots_0_16
+      #inputs.swayfx.packages.${system}.swayfx-unwrapped
+    ];
 
-		services.pipewire = {
-				enable = true;
-				alsa.enable = true;
-				pulse.enable = true;
-			};
-	}
+    services.pipewire = {
+        enable = true;
+        alsa.enable = true;
+        pulse.enable = true;
+      };
+  }

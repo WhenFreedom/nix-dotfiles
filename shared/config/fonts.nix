@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-		fonts.packages = with pkgs; [
-			noto-fonts
-			noto-fonts-cjk
-			font-awesome
-			];
-	}
+    fonts.packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk
+      font-awesome
+      ];
+  }

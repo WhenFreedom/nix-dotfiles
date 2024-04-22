@@ -1,17 +1,17 @@
 {pkgs, config, ...}:
 let
-	extensions = import ./extensions.nix;
+  extensions = import ./extensions.nix;
 in
 {
-	policies = {
-		DisableTelemetry = true;
-		"DisplayBookmarksToolbar" = "always";
-		"EnableTrackingProtection" = {
-				"Value" = true;
-				"Locked" = true;
-				"Cryptomining" = true;
-				"Fingerprinting" = true;
-			};
-		"DisablePocket" = true;
-	};
+  policies = {
+    DisableTelemetry = true;
+    "DisplayBookmarksToolbar" = "always";
+    "EnableTrackingProtection" = {
+        "Value" = true;
+        "Locked" = true;
+        "Cryptomining" = true;
+        "Fingerprinting" = true;
+      };
+    "DisablePocket" = true;
+  };
 }

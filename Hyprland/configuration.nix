@@ -1,10 +1,10 @@
 {pkgs, inputs, lib, ...}: {
 
-	imports = [
-		../shared/config
-		./config
-		../comp/wayland/config
-	];
+  imports = [
+    ../shared/config
+    ./config
+    ../comp/wayland/config
+  ];
 
-	networking.hostName = "hyprland";
-	}
+  networking.hostName = "hyprland";
+  }

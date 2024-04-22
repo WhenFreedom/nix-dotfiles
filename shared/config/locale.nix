@@ -1,6 +1,6 @@
 {lib, ...}:
 {
-	 # Set your time zone.
+   # Set your time zone.
   time.timeZone = "Europe/London";
 
   # Select internationalisation properties.
@@ -18,6 +18,6 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-	#Configure console keymap
-	console.keyMap = "uk";
-	}
+  #Configure console keymap
+  console.keyMap = "uk";
+  }

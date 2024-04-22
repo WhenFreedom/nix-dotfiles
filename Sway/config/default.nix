@@ -1,6 +1,6 @@
 {pkgs, ...}:
 {
-		imports = [
-			./systemPackages.nix
-		];
-	}
+    imports = [
+      ./systemPackages.nix
+    ];
+  }
